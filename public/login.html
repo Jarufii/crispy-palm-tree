@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back - UMDC</title>
+    <link rel="stylesheet" href="/assets/css/auth-pages.css">
+</head>
+<body>
+    <div class="container">
+        <div class="visual-panel user-theme">
+            <div class="icon-container">
+                <div class="main-icon">🤝</div>
+                <h1 class="welcome-title">Welcome Back</h1>
+                <p class="welcome-quote">
+                    "Small acts, when multiplied by millions of people, can transform the world."
+                </p>
+            </div>
+            <div class="impact-stats">
+                <div class="stat"><div class="stat-number">₱2.5M+</div><div class="stat-label">Total Donated</div></div>
+                <div class="stat"><div class="stat-number">150+</div><div class="stat-label">Campaigns</div></div>
+                <div class="stat"><div class="stat-number">5K+</div><div class="stat-label">Donors</div></div>
+            </div>
+        </div>
+        <div class="form-panel">
+            <div class="form-container">
+                <div class="logo">UMDC <span>Platform</span></div>
+                <h2>Sign in</h2>
+                <p class="subtitle">Access your account to continue making a difference</p>
+
+                <div class="error-message" id="errorMessage" style="display:none">
+                    Invalid email or password. Please try again.
+                </div>
+
+                <!-- Posts to public/login.php which handles auth and redirects -->
+                <form method="POST" action="/public/login.php" id="loginForm">
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Email address" required id="email">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Password" required id="password">
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember"> Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="login-btn">Sign in →</button>
+                </form>
+
+                <div class="register-link">
+                    Don't have an account? <a href="/public/register.html">Create account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/auth-pages.js"></script>
+</body>
+</html>
+<script>
+// Show error message if redirected back with ?error=
+const params = new URLSearchParams(window.location.search);
+const err = params.get('error');
+const reg = params.get('registered');
+if (reg) {
+    const box = document.getElementById('errorMessage');
+    box.style.display = 'block';
+    box.style.background = '#0a1f0a';
+    box.style.borderColor = '#22c55e';
+    box.style.color = '#4ade80';
+    box.textContent = 'Account created! You can now sign in.';
+}
+if (err) {
+    const box = document.getElementById('errorMessage');
+    box.style.display = 'block';
+    box.textContent = {
+        invalid:   'Invalid email or password. Please try again.',
+        suspended: 'Your account has been suspended.',
+        server:    'A server error occurred. Please try again later.',
+    }[err] ?? 'Login failed. Please try again.';
+}
+</script>

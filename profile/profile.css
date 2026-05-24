@@ -1,0 +1,286 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    display:flex;
+    color:#111827;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+  width:250px;
+  height:100vh;
+  background:#fff;
+  border-right:1px solid #e5e7eb;
+  position:fixed;
+  left:0;
+  top:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.sidebar-top{
+  padding:28px 22px;
+}
+
+.logo h2{
+  font-size:34px;
+  margin-bottom:5px;
+  font-weight:500;
+}
+
+.logo p{
+  color:#6b7280;
+  font-size:14px;
+}
+
+.menu{
+  margin-top:30px;
+}
+
+.menu-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:15px 18px;
+  margin-bottom:10px;
+  text-decoration:none;
+  color:#374151;
+  border-radius:14px;
+  transition:0.3s;
+  font-size:16px;
+}
+
+.menu-item:hover{
+  background:#f3f4f6;
+}
+
+.menu-item.active{
+  background:#0d9488;
+  color:white;
+}
+
+/* ================= PROFILE ================= */
+
+.sidebar-bottom{
+  border-top:1px solid #e5e7eb;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.profile-icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#0d9488;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#ffffff;
+  font-size:18px;
+}
+
+.profile-info h4{
+  font-size:15px;
+  color:#111827;
+  font-weight:600;
+}
+
+.profile-info p{
+  font-size:13px;
+  color:#6b7280;
+  margin-top:2px;
+}
+
+.logout{
+  color:#374151;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.profile-link{
+  text-decoration:none;
+}
+
+/* ================= MAIN ================= */
+
+.main{
+    margin-left:270px;
+    width:calc(100% - 270px);
+    padding:40px;
+}
+
+.page-title{
+    font-size:56px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:30px;
+}
+
+/* ================= SUCCESS ================= */
+
+.success{
+    background:#dcfce7;
+    color:#166534;
+    border:1px solid #bbf7d0;
+    padding:16px;
+    border-radius:14px;
+    margin-bottom:22px;
+    font-size:15px;
+}
+
+/* ================= PROFILE CARD ================= */
+
+.profile-card{
+    width:100%;
+    max-width:850px;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:28px;
+    padding:36px;
+}
+
+.profile-top{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    padding-bottom:28px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.big-profile{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:#e2e8f0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    color:#64748b;
+}
+
+.profile-name{
+    font-size:40px;
+    font-weight:700;
+    color:#111827;
+}
+
+/* ================= DETAILS ================= */
+
+.profile-details{
+    padding-top:30px;
+}
+
+.detail-group{
+    margin-bottom:24px;
+}
+
+.detail-label{
+    font-size:14px;
+    color:#6b7280;
+    margin-bottom:10px;
+}
+
+.detail-value{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+}
+
+.detail-value i{
+    color:#9ca3af;
+    margin-top:16px;
+}
+
+.detail-value input,
+.detail-value textarea{
+    width:100%;
+    border:1px solid #d1d5db;
+    background:#f9fafb;
+    border-radius:14px;
+    padding:14px 16px;
+    font-size:15px;
+    color:#111827;
+    outline:none;
+}
+
+.detail-value input:focus,
+.detail-value textarea:focus{
+    border-color:#11998e;
+}
+
+textarea{
+    resize:none;
+    min-height:120px;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-area{
+    margin-top:30px;
+}
+
+.save-btn{
+    background:#11998e;
+    color:#ffffff;
+    border:none;
+    padding:15px 24px;
+    border-radius:14px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.save-btn:hover{
+    background:#0f766e;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .main{
+        margin-left:0;
+        width:100%;
+        padding:20px;
+    }
+
+    .profile-card{
+        padding:25px;
+    }
+
+    .profile-top{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .profile-name{
+        font-size:30px;
+    }
+
+    .page-title{
+        font-size:40px;
+    }
+
+}
