@@ -1,0 +1,73 @@
+/* UMDC Public Pages */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ── Nav ── */
+.umdc-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--white);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-logo { font-size: 1.25rem; font-weight: 800; color: var(--text); }
+.nav-logo span { color: var(--brand); }
+.nav-links { display: flex; align-items: center; gap: 1.5rem; }
+.nav-links a { font-size: .95rem; font-weight: 500; color: var(--muted); transition: color .2s; }
+.nav-links a:hover { color: var(--brand); }
+.nav-cta {
+  background: var(--brand); color: var(--white) !important;
+  padding: .45rem 1.1rem; border-radius: 8px; font-size: .875rem !important;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--brand-dark) !important; opacity: 1 !important; }
+
+/* ── Hero ── */
+.hero {
+  text-align: center; padding: 5rem 2rem 4rem;
+  background: linear-gradient(135deg,#6c63ff15 0%,#f8fafc 60%);
+}
+.hero h1 { font-size: clamp(2rem,5vw,3.5rem); font-weight: 800; margin-bottom: 1rem; }
+.hero p { max-width: 540px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.1rem; }
+.btn-primary, .btn-outline {
+  display: inline-block; padding: .75rem 1.75rem;
+  border-radius: var(--radius); font-weight: 600; font-size: .95rem;
+  margin: .4rem; transition: all .2s;
+}
+.btn-primary { background: var(--brand); color: var(--white); }
+.btn-primary:hover { background: var(--brand-dark); opacity: 1; color: var(--white); }
+.btn-outline { border: 2px solid var(--brand); color: var(--brand); }
+.btn-outline:hover { background: var(--brand); color: var(--white); opacity: 1; }
+
+/* ── Stats bar ── */
+.stats-bar {
+  display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+  padding: 2.5rem 2rem; background: var(--white);
+  box-shadow: var(--shadow);
+}
+.stat-item { text-align: center; }
+.stat-num { display: block; font-size: 2rem; font-weight: 800; color: var(--brand); }
+.stat-lbl { font-size: .875rem; color: var(--muted); font-weight: 500; }
+
+/* ── Featured Campaigns ── */
+.featured-campaigns { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+.featured-campaigns h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; }
+.campaign-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 1.5rem; }
+.campaign-card {
+  background: var(--white); border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s;
+}
+.campaign-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+.card-img { width: 100%; height: 200px; object-fit: cover; }
+.card-body { padding: 1.25rem; }
+.card-body h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .25rem; }
+.card-org { font-size: .82rem; color: var(--brand); font-weight: 600; margin-bottom: .5rem; }
+.card-desc { font-size: .875rem; color: var(--muted); margin-bottom: 1rem; }
+.progress-bar { background: #e5e7eb; border-radius: 99px; height: 8px; margin-bottom: .5rem; overflow: hidden; }
+.progress-fill { background: var(--brand); height: 8px; border-radius: 99px; transition: width .4s; }
+.card-stats { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); margin-bottom: 1rem; }
+.btn-donate {
+  display: block; text-align: center; background: var(--brand); color: var(--white);
+  padding: .6rem 1rem; border-radius: 8px; font-weight: 600; font-size: .875rem;
+  transition: background .2s;
+}
+.btn-donate:hover { background: var(--brand-dark); opacity: 1; color: var(--white); }

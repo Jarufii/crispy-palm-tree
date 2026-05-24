@@ -1,0 +1,74 @@
+/* =========================================================
+   campaign-components.css
+   Campaign cards, progress bars, donate button, donation
+   modal, toast notifications, and loading spinner styles.
+   Used by: dashboard/user.php
+   ========================================================= */
+
+/* ----- Campaign Card ----- */
+.campaign-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.campaign-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ----- Progress Bar ----- */
+.progress {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ----- Donate Button ----- */
+.btn-donate {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    transition: all 0.3s;
+}
+
+.btn-donate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+/* ----- Donation Modal ----- */
+.modal-custom .modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* ----- Loading Spinner ----- */
+.loading-spinner {
+    text-align: center;
+    padding: 50px;
+}
+
+.spinner-border-custom {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* ----- Toast Notifications ----- */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+}

@@ -1,0 +1,377 @@
+/* =========================================================
+   auth-pages.css
+   Styles for login and register pages (split-panel layout).
+   Used by: public/login.html, public/register.html
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ----- Two-Panel Wrapper ----- */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* ----- Left Visual Panel ----- */
+.visual-panel {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+}
+
+/* Register page – role-specific themes */
+.visual-panel.user-theme {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.visual-panel.org-theme {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.visual-panel::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: float 20s linear infinite;
+}
+
+/* ----- Animations ----- */
+@keyframes float {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(50px, 50px) rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25%       { transform: translateX(-5px); }
+    75%       { transform: translateX(5px); }
+}
+
+/* ----- Visual Panel Content ----- */
+.icon-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: fadeInUp 0.6s ease;
+}
+
+.main-icon {
+    font-size: 120px;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+.welcome-title,
+.role-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-quote,
+.role-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1rem;
+    max-width: 300px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.welcome-quote {
+    font-style: italic;
+}
+
+/* ----- Impact Stats (Login page) ----- */
+.impact-stats {
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 2;
+}
+
+.stat {
+    text-align: center;
+    color: white;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* ----- Right Form Panel ----- */
+.form-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    background: white;
+    overflow-y: auto;
+}
+
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s ease;
+}
+
+/* ----- Logo ----- */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1a1a2e;
+}
+
+.logo span {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ----- Headings & Subtitle ----- */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* ----- Form Fields ----- */
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: white;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ----- Primary Action Button ----- */
+.login-btn,
+.register-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* ----- Form Options (remember / forgot) ----- */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: auto;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* ----- Bottom Navigation Link ----- */
+.register-link,
+.login-link {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    color: #666;
+}
+
+.register-link a,
+.login-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover,
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ----- Error Message ----- */
+.error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 0.75rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+    animation: shake 0.5s ease;
+}
+
+/* ----- Password Strength Indicator (Register) ----- */
+.password-strength {
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    background: #e0e0e0;
+}
+
+.strength-text {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* ----- Role Toggle (Register) ----- */
+.role-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.role-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.role-btn.active {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.05);
+    color: #667eea;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .visual-panel {
+        padding: 2rem;
+        min-height: 280px;
+    }
+
+    .form-panel {
+        padding: 2rem;
+    }
+
+    .main-icon {
+        font-size: 60px;
+    }
+
+    .welcome-title,
+    .role-title {
+        font-size: 1.5rem;
+    }
+
+    .impact-stats {
+        bottom: 1.5rem;
+        gap: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1rem;
+    }
+}

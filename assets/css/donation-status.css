@@ -1,0 +1,112 @@
+/* =========================================================
+   donation-status.css
+   Styles for donations/success.php and donations/failed.php.
+   ========================================================= */
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ----- Card Wrapper ----- */
+.status-card,
+.failed-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ----- Status Icons ----- */
+.success-icon {
+    font-size: 80px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.pending-icon {
+    font-size: 80px;
+    color: #ffc107;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.failed-icon {
+    font-size: 80px;
+    color: #dc3545;
+    margin-bottom: 20px;
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1);   opacity: 1; }
+    50%  { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1);   opacity: 1; }
+}
+
+/* ----- Receipt Number Badge ----- */
+.receipt-number {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+/* ----- Primary Button ----- */
+.btn-custom {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    color: white;
+}
+
+/* ----- Outline Button ----- */
+.btn-outline-custom {
+    border: 2px solid #667eea;
+    color: #667eea;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    background: white;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-outline-custom:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* ----- Auto-refresh Progress Bar (Pending state) ----- */
+.progress-timer {
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-timer-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    width: 0%;
+    animation: progress 60s linear forwards;
+}
+
+@keyframes progress {
+    from { width: 0%; }
+    to   { width: 100%; }
+}
